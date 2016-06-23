@@ -16,6 +16,7 @@ class RainforestCardCell: UICollectionViewCell {
     let gradientView = GradientView()
     var featureImageSizeOptional: CGSize?
     var placeholderLayer = CALayer()
+    var backgroundImageNode: ASImageNode?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -58,6 +59,14 @@ class RainforestCardCell: UICollectionViewCell {
         let backgroundImageNode = ASImageNode()
         backgroundImageNode.image = image
         backgroundImageNode.contentMode = .ScaleAspectFill
+        backgroundImageNode.layerBacked = true
+        
+        // MARK: - Node Layout Section
+        backgroundImageNode.frame = FrameCalculator.frameForContainer(image.size)
+        
+        //MARK: - Node Layer and Wrap Up Section
+        contentView.layer.addSublayer(backgroundImageNode.layer)
+        self.backgroundImageNode = backgroundImageNode
     }
     
 }
