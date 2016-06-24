@@ -26,7 +26,7 @@ class TwoColumnLayoutMetrics: RainforestLayoutMetrics {
     let isOdd: Bool = numberOfItems%2 > 0
     var numberOfRows = numberOfItems/2
     if isOdd {
-      numberOfRows++
+      numberOfRows += 1
     }
     return numberOfRows
   }
@@ -175,7 +175,7 @@ class RainforestCollectionViewLayout: UICollectionViewLayout {
     return allLayoutAttributes
   }
   
-  override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes! {
+  override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
     if indexPath.item >= allLayoutAttributes.count { return nil }
     return allLayoutAttributes[indexPath.item]
   }
