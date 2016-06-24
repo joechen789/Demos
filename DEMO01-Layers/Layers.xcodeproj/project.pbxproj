@@ -20,6 +20,7 @@
 		20744EE519F3184A00089E92 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20744EE419F3184A00089E92 /* GradientView.swift */; };
 		20A29BFC19B55FA3007FF4F2 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A29BFB19B55FA3007FF4F2 /* UIImage+ImageEffects.m */; };
 		20D857E019E7744C00C74F2D /* AttributionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D857DF19E7744C00C74F2D /* AttributionTableViewController.swift */; };
+		A4A7A07A1D1C0C2200292321 /* GradientNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7A0791D1C0C2200292321 /* GradientNode.swift */; };
 		AAB564BDB16D461AAE45D3CF /* libPods-Layers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A16CEE3C744E318A68991B /* libPods-Layers.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		32586020D943488CAFE7AAD2 /* Pods-Layers.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Layers.xcconfig"; path = "Pods/Pods-Layers.xcconfig"; sourceTree = "<group>"; };
 		4AB6CAF9D65C0DE0D974D2C5 /* Pods-Layers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Layers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Layers/Pods-Layers.debug.xcconfig"; sourceTree = "<group>"; };
 		93A16CEE3C744E318A68991B /* libPods-Layers.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Layers.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4A7A0791D1C0C2200292321 /* GradientNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientNode.swift; sourceTree = "<group>"; };
 		D4505338B6345F4A18AB13D9 /* Pods-Layers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Layers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Layers/Pods-Layers.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				20744EE419F3184A00089E92 /* GradientView.swift */,
+				A4A7A0791D1C0C2200292321 /* GradientNode.swift */,
 				206134AB19B53F8000888CAB /* RainforestCardCell.swift */,
 				2061349019B53BE200888CAB /* RainforestViewController.swift */,
 				20A29BF919B55FA2007FF4F2 /* Layers-Bridging-Header.h */,
@@ -265,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20A29BFC19B55FA3007FF4F2 /* UIImage+ImageEffects.m in Sources */,
+				A4A7A07A1D1C0C2200292321 /* GradientNode.swift in Sources */,
 				2061349119B53BE200888CAB /* RainforestViewController.swift in Sources */,
 				20744EE519F3184A00089E92 /* GradientView.swift in Sources */,
 				20101BE919CF4E9300E363A8 /* FrameCalculator.swift in Sources */,
