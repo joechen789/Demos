@@ -37,6 +37,7 @@ public class ParkedTextField: UITextField {
             placeholder = placeholderText + parkedText
         }
     }
+    
     var _parkedText = ""
 
     /// Variable part of the text. Defaults to "".
@@ -136,7 +137,7 @@ public class ParkedTextField: UITextField {
 
         parkedTextColor = textColor
 
-        addTarget(self, action: "textChanged:", forControlEvents: .EditingChanged)
+        addTarget(self, action: #selector(ParkedTextField.textChanged(_:)), forControlEvents: .EditingChanged)
 
         text = ""
         prevText = text!

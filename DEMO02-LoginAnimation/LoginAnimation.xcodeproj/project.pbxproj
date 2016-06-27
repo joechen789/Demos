@@ -18,6 +18,7 @@
 		A4C680AE1D214695008A3FA4 /* SpinerLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C680AA1D214695008A3FA4 /* SpinerLayer.m */; };
 		A4C680B01D2148BE008A3FA4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C680AF1D2148BE008A3FA4 /* MainViewController.swift */; };
 		A4C680B21D21586E008A3FA4 /* ParkedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C680B11D21586E008A3FA4 /* ParkedTextField.swift */; };
+		A4C680B81D215B1A008A3FA4 /* LoginTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C680B71D215B1A008A3FA4 /* LoginTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		A4C680AA1D214695008A3FA4 /* SpinerLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinerLayer.m; sourceTree = "<group>"; };
 		A4C680AF1D2148BE008A3FA4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A4C680B11D21586E008A3FA4 /* ParkedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkedTextField.swift; sourceTree = "<group>"; };
+		A4C680B71D215B1A008A3FA4 /* LoginTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		A4C6807C1D212B38008A3FA4 /* LoginAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				A4C680B41D215A1B008A3FA4 /* SwiftClass */,
 				A4C680A21D214695008A3FA4 /* Class */,
 				A4C6807D1D212B38008A3FA4 /* AppDelegate.swift */,
 				A4C6807F1D212B38008A3FA4 /* ViewController.swift */,
@@ -98,6 +101,14 @@
 				A4C680AA1D214695008A3FA4 /* SpinerLayer.m */,
 			);
 			path = Class;
+			sourceTree = "<group>";
+		};
+		A4C680B41D215A1B008A3FA4 /* SwiftClass */ = {
+			isa = PBXGroup;
+			children = (
+				A4C680B71D215B1A008A3FA4 /* LoginTransition.swift */,
+			);
+			path = SwiftClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4C680B81D215B1A008A3FA4 /* LoginTransition.swift in Sources */,
 				A4C680B21D21586E008A3FA4 /* ParkedTextField.swift in Sources */,
 				A4C680B01D2148BE008A3FA4 /* MainViewController.swift in Sources */,
 				A4C680801D212B38008A3FA4 /* ViewController.swift in Sources */,
