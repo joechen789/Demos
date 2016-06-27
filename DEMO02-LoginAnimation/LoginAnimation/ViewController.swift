@@ -10,15 +10,40 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var usernameTextView: RPFloatingPlaceholderTextField!
-    @IBOutlet var passwordTextView: RPFloatingPlaceholderTextField!
+    @IBOutlet var usernameTextField: SkyFloatingLabelTextField!
+    @IBOutlet var passwordTextField: SkyFloatingLabelTextField!
     
     @IBOutlet var loginSwitch: UISwitch!
+    
+    let lightGreyColor = UIColor(red: 197/255, green: 205/255, blue: 205/255, alpha: 1.0)
+    let darkGreyColor = UIColor(red: 52/255, green: 42/255, blue: 61/255, alpha: 1.0)
+    let overcastBlueColor = UIColor(red: 0, green: 187/255, blue: 204/255, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         createPresentControllerButton()
+        
+        usernameTextField.keyboardType = .ASCIICapable
+        passwordTextField.secureTextEntry = true
+        
+        applySkyscannerTheme(usernameTextField)
+        applySkyscannerTheme(passwordTextField)
+    }
+
+    func applySkyscannerTheme(textField: SkyFloatingLabelTextField) {
+        
+        textField.tintColor = overcastBlueColor
+        
+        textField.textColor = darkGreyColor
+        textField.lineColor = lightGreyColor
+        
+        textField.selectedTitleColor = overcastBlueColor
+        textField.selectedLineColor = overcastBlueColor
+        
+        textField.titleLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 12)
+        textField.placeholderFont = UIFont(name: "AppleSDGothicNeo-Light", size: 18)
+        textField.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 18)
     }
     
     func createPresentControllerButton() {
