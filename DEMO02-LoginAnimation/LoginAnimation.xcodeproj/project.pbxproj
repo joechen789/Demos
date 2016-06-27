@@ -17,6 +17,7 @@
 		A4C680AD1D214695008A3FA4 /* RPFloatingPlaceholderTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C680A81D214695008A3FA4 /* RPFloatingPlaceholderTextField.m */; };
 		A4C680AE1D214695008A3FA4 /* SpinerLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C680AA1D214695008A3FA4 /* SpinerLayer.m */; };
 		A4C680B01D2148BE008A3FA4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C680AF1D2148BE008A3FA4 /* MainViewController.swift */; };
+		A4C680B21D21586E008A3FA4 /* ParkedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C680B11D21586E008A3FA4 /* ParkedTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		A4C680A91D214695008A3FA4 /* SpinerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinerLayer.h; sourceTree = "<group>"; };
 		A4C680AA1D214695008A3FA4 /* SpinerLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinerLayer.m; sourceTree = "<group>"; };
 		A4C680AF1D2148BE008A3FA4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A4C680B11D21586E008A3FA4 /* ParkedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkedTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		A4C680A21D214695008A3FA4 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				A4C680B11D21586E008A3FA4 /* ParkedTextField.swift */,
 				A4C680A31D214695008A3FA4 /* HyLoglnButton.h */,
 				A4C680A41D214695008A3FA4 /* HyLoglnButton.m */,
 				A4C680A51D214695008A3FA4 /* HyTransitions.h */,
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4C680B21D21586E008A3FA4 /* ParkedTextField.swift in Sources */,
 				A4C680B01D2148BE008A3FA4 /* MainViewController.swift in Sources */,
 				A4C680801D212B38008A3FA4 /* ViewController.swift in Sources */,
 				A4C680AC1D214695008A3FA4 /* HyTransitions.m in Sources */,
@@ -329,6 +333,7 @@
 				A4C6808E1D212B38008A3FA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

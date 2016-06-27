@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "61E861667713324D551350A59C7F73E01D9778A0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2ADE6DD5FE3F220904FC8623C0EDE339BC93A3D6" : 0,
+    "61E861667713324D551350A59C7F73E01D9778A0" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6B3612D3-4AB7-4D1F-936E-A4596EC2F72D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2ADE6DD5FE3F220904FC8623C0EDE339BC93A3D6" : "",
+    "61E861667713324D551350A59C7F73E01D9778A0" : "Demos\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "LoginAnimation",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "DEMO02-LoginAnimation\/LoginAnimation.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/broccolii\/LoadingView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2ADE6DD5FE3F220904FC8623C0EDE339BC93A3D6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/broccolii\/Demos.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "61E861667713324D551350A59C7F73E01D9778A0"
+    }
+  ]
+}
