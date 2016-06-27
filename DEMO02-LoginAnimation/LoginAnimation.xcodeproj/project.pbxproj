@@ -13,13 +13,10 @@
 		A4C680851D212B38008A3FA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4C680841D212B38008A3FA4 /* Assets.xcassets */; };
 		A4C680881D212B38008A3FA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C680861D212B38008A3FA4 /* LaunchScreen.storyboard */; };
 		A4C680AB1D214695008A3FA4 /* HyLoglnButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C680A41D214695008A3FA4 /* HyLoglnButton.m */; };
-		A4C680AC1D214695008A3FA4 /* HyTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C680A61D214695008A3FA4 /* HyTransitions.m */; };
-		A4C680AD1D214695008A3FA4 /* RPFloatingPlaceholderTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C680A81D214695008A3FA4 /* RPFloatingPlaceholderTextField.m */; };
 		A4C680AE1D214695008A3FA4 /* SpinerLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C680AA1D214695008A3FA4 /* SpinerLayer.m */; };
 		A4C680B01D2148BE008A3FA4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C680AF1D2148BE008A3FA4 /* MainViewController.swift */; };
 		A4C680B21D21586E008A3FA4 /* ParkedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C680B11D21586E008A3FA4 /* ParkedTextField.swift */; };
 		A4C680B81D215B1A008A3FA4 /* LoginTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C680B71D215B1A008A3FA4 /* LoginTransition.swift */; };
-		A4C680BA1D216E13008A3FA4 /* FloatingPlaceholderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C680B91D216E13008A3FA4 /* FloatingPlaceholderTextField.swift */; };
 		A4C680BE1D21707D008A3FA4 /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C680BB1D21707D008A3FA4 /* SkyFloatingLabelTextField.swift */; };
 		A4C680BF1D21707D008A3FA4 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C680BC1D21707D008A3FA4 /* SkyFloatingLabelTextFieldWithIcon.swift */; };
 		A4C680C01D21707D008A3FA4 /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C680BD1D21707D008A3FA4 /* UITextField+fixCaretPosition.swift */; };
@@ -37,16 +34,11 @@
 		A4C680931D213CAC008A3FA4 /* LoginAnimation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LoginAnimation-Bridging-Header.h"; sourceTree = "<group>"; };
 		A4C680A31D214695008A3FA4 /* HyLoglnButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyLoglnButton.h; sourceTree = "<group>"; };
 		A4C680A41D214695008A3FA4 /* HyLoglnButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyLoglnButton.m; sourceTree = "<group>"; };
-		A4C680A51D214695008A3FA4 /* HyTransitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyTransitions.h; sourceTree = "<group>"; };
-		A4C680A61D214695008A3FA4 /* HyTransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyTransitions.m; sourceTree = "<group>"; };
-		A4C680A71D214695008A3FA4 /* RPFloatingPlaceholderTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPFloatingPlaceholderTextField.h; sourceTree = "<group>"; };
-		A4C680A81D214695008A3FA4 /* RPFloatingPlaceholderTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPFloatingPlaceholderTextField.m; sourceTree = "<group>"; };
 		A4C680A91D214695008A3FA4 /* SpinerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinerLayer.h; sourceTree = "<group>"; };
 		A4C680AA1D214695008A3FA4 /* SpinerLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinerLayer.m; sourceTree = "<group>"; };
 		A4C680AF1D2148BE008A3FA4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A4C680B11D21586E008A3FA4 /* ParkedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkedTextField.swift; sourceTree = "<group>"; };
 		A4C680B71D215B1A008A3FA4 /* LoginTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTransition.swift; sourceTree = "<group>"; };
-		A4C680B91D216E13008A3FA4 /* FloatingPlaceholderTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPlaceholderTextField.swift; sourceTree = "<group>"; };
 		A4C680BB1D21707D008A3FA4 /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkyFloatingLabelTextField.swift; path = "../../../../../Downloads/SkyFloatingLabelTextField-master/Sources/SkyFloatingLabelTextField.swift"; sourceTree = "<group>"; };
 		A4C680BC1D21707D008A3FA4 /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SkyFloatingLabelTextFieldWithIcon.swift; path = "../../../../../Downloads/SkyFloatingLabelTextField-master/Sources/SkyFloatingLabelTextFieldWithIcon.swift"; sourceTree = "<group>"; };
 		A4C680BD1D21707D008A3FA4 /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITextField+fixCaretPosition.swift"; path = "../../../../../Downloads/SkyFloatingLabelTextField-master/Sources/UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
@@ -107,11 +99,6 @@
 				A4C680B11D21586E008A3FA4 /* ParkedTextField.swift */,
 				A4C680A31D214695008A3FA4 /* HyLoglnButton.h */,
 				A4C680A41D214695008A3FA4 /* HyLoglnButton.m */,
-				A4C680A51D214695008A3FA4 /* HyTransitions.h */,
-				A4C680A61D214695008A3FA4 /* HyTransitions.m */,
-				A4C680A71D214695008A3FA4 /* RPFloatingPlaceholderTextField.h */,
-				A4C680A81D214695008A3FA4 /* RPFloatingPlaceholderTextField.m */,
-				A4C680B91D216E13008A3FA4 /* FloatingPlaceholderTextField.swift */,
 				A4C680A91D214695008A3FA4 /* SpinerLayer.h */,
 				A4C680AA1D214695008A3FA4 /* SpinerLayer.m */,
 			);
@@ -204,13 +191,10 @@
 				A4C680C01D21707D008A3FA4 /* UITextField+fixCaretPosition.swift in Sources */,
 				A4C680B01D2148BE008A3FA4 /* MainViewController.swift in Sources */,
 				A4C680801D212B38008A3FA4 /* ViewController.swift in Sources */,
-				A4C680AC1D214695008A3FA4 /* HyTransitions.m in Sources */,
 				A4C680AE1D214695008A3FA4 /* SpinerLayer.m in Sources */,
 				A4C680BF1D21707D008A3FA4 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				A4C6807E1D212B38008A3FA4 /* AppDelegate.swift in Sources */,
-				A4C680BA1D216E13008A3FA4 /* FloatingPlaceholderTextField.swift in Sources */,
 				A4C680AB1D214695008A3FA4 /* HyLoglnButton.m in Sources */,
-				A4C680AD1D214695008A3FA4 /* RPFloatingPlaceholderTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +309,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LoginAnimation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youzan.LoginAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -339,6 +324,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LoginAnimation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youzan.LoginAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";

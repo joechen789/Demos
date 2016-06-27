@@ -86,7 +86,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UIViewControllerTransitioningDelegate {
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return HyTransitions(transitionDuration: 0.4, startingAlpha: 0.5, isBOOL: true)
+        return LoginTransition(transitionDuration: 0.4, startingAlpha: 0.5, isPush: true)
     }
     
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
