@@ -16,7 +16,7 @@
 
 @property (nonatomic,assign) BOOL is;
 
-@property (nonatomic,retain) id transitionContext;
+//@property (nonatomic,retain) id transitionContext;
 
 @end
 
