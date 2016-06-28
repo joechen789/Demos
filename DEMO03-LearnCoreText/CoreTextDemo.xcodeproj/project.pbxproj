@@ -13,6 +13,10 @@
 		A4AB85711D22526600C91899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AB856F1D22526600C91899 /* Main.storyboard */; };
 		A4AB85731D22526600C91899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4AB85721D22526600C91899 /* Assets.xcassets */; };
 		A4AB85761D22526600C91899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AB85741D22526600C91899 /* LaunchScreen.storyboard */; };
+		A4AB85831D226A2B00C91899 /* CTFrameParserConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB85821D226A2B00C91899 /* CTFrameParserConfig.m */; };
+		A4AB85861D2273F000C91899 /* CTFrameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB85851D2273F000C91899 /* CTFrameParser.m */; };
+		A4AB85891D22741900C91899 /* CoreTextData.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB85881D22741900C91899 /* CoreTextData.m */; };
+		A4AB858C1D227BEB00C91899 /* CTDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB858B1D227BEB00C91899 /* CTDisplayView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		A4AB85721D22526600C91899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4AB85751D22526600C91899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4AB85771D22526600C91899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4AB85811D226A2B00C91899 /* CTFrameParserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFrameParserConfig.h; sourceTree = "<group>"; };
+		A4AB85821D226A2B00C91899 /* CTFrameParserConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFrameParserConfig.m; sourceTree = "<group>"; };
+		A4AB85841D2273F000C91899 /* CTFrameParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFrameParser.h; sourceTree = "<group>"; };
+		A4AB85851D2273F000C91899 /* CTFrameParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFrameParser.m; sourceTree = "<group>"; };
+		A4AB85871D22741900C91899 /* CoreTextData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextData.h; sourceTree = "<group>"; };
+		A4AB85881D22741900C91899 /* CoreTextData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextData.m; sourceTree = "<group>"; };
+		A4AB858A1D227BEB00C91899 /* CTDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTDisplayView.h; sourceTree = "<group>"; };
+		A4AB858B1D227BEB00C91899 /* CTDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTDisplayView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 		A4AB85651D22526600C91899 /* CoreTextDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A4AB85801D226A1B00C91899 /* CoreTextEngine */,
 				A4AB85691D22526600C91899 /* AppDelegate.h */,
 				A4AB856A1D22526600C91899 /* AppDelegate.m */,
 				A4AB856C1D22526600C91899 /* ViewController.h */,
@@ -77,6 +90,21 @@
 				A4AB85671D22526600C91899 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4AB85801D226A1B00C91899 /* CoreTextEngine */ = {
+			isa = PBXGroup;
+			children = (
+				A4AB858A1D227BEB00C91899 /* CTDisplayView.h */,
+				A4AB858B1D227BEB00C91899 /* CTDisplayView.m */,
+				A4AB85811D226A2B00C91899 /* CTFrameParserConfig.h */,
+				A4AB85821D226A2B00C91899 /* CTFrameParserConfig.m */,
+				A4AB85841D2273F000C91899 /* CTFrameParser.h */,
+				A4AB85851D2273F000C91899 /* CTFrameParser.m */,
+				A4AB85871D22741900C91899 /* CoreTextData.h */,
+				A4AB85881D22741900C91899 /* CoreTextData.m */,
+			);
+			path = CoreTextEngine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +179,11 @@
 			files = (
 				A4AB856E1D22526600C91899 /* ViewController.m in Sources */,
 				A4AB856B1D22526600C91899 /* AppDelegate.m in Sources */,
+				A4AB85891D22741900C91899 /* CoreTextData.m in Sources */,
+				A4AB85831D226A2B00C91899 /* CTFrameParserConfig.m in Sources */,
 				A4AB85681D22526600C91899 /* main.m in Sources */,
+				A4AB858C1D227BEB00C91899 /* CTDisplayView.m in Sources */,
+				A4AB85861D2273F000C91899 /* CTFrameParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +332,7 @@
 				A4AB857C1D22526600C91899 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

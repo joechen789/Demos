@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "CoreText/CoreText.h"
 
 @interface CoreTextData : NSObject
+
+@property (assign, nonatomic) CTFrameRef ctFrame;
+@property (assign, nonatomic) CGFloat height;
 
 @end
