@@ -6,17 +6,15 @@
 //  Copyright (c) 2015年 Jonathan Tribouharet. All rights reserved.
 //
 
-#import "SpinerLayer.h"
+#import "HySpinerLayer.h"
 #import <UIKit/UIKit.h>
 
-@implementation SpinerLayer
+@implementation HySpinerLayer
 
-
--(instancetype) initWithFrame:(CGRect)frame{
-
+-(instancetype)initWithFrame:(CGRect)frame {
     self = [super init];
     if (self) {
-        CGFloat radius = (CGRectGetHeight(frame) / 2) * 0.5;
+        CGFloat radius = CGRectGetHeight(frame) / 4;
         self.frame = CGRectMake(0, 0, CGRectGetHeight(frame), CGRectGetHeight(frame));
         CGPoint center = CGPointMake(CGRectGetHeight(frame) / 2, CGRectGetMidY(self.bounds));
         CGFloat startAngle = 0 - M_PI_2;
@@ -33,8 +31,7 @@
     return self;
 }
 
--(void)animation{
-    
+-(void)beginAnimation {
     self.hidden = false;
     CABasicAnimation *rotate = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     rotate.fromValue = 0;
@@ -47,8 +44,7 @@
     [self addAnimation:rotate forKey:rotate.keyPath];
 }
 
--(void)stopAnimation{
-
+-(void)stopAnimation {
     self.hidden = true;
     [self removeAllAnimations];
 }

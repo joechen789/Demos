@@ -47,24 +47,24 @@ class ViewController: UIViewController {
     }
     
     func createPresentControllerButton() {
-        let log = HyLoglnButton(frame: CGRect(x: 20, y: CGRectGetHeight(view.bounds) - 120, width: UIScreen.mainScreen().bounds.size.width - 40, height: 40))
-        log.backgroundColor = UIColor(red: 1, green: 0, blue: 128 / 255, alpha: 1)
-        log.setTitle("登陆", forState: .Normal)
-        view.addSubview(log)
-        log.addTarget(self, action: #selector(ViewController.PresentViewController(_:)), forControlEvents: .TouchUpInside)
+        let loginButton = HyLoginButton(frame: CGRect(x: 20, y: CGRectGetHeight(view.bounds) - 120, width: UIScreen.mainScreen().bounds.size.width - 40, height: 40))
+        loginButton.backgroundColor = UIColor(red: 1, green: 0, blue: 128 / 255, alpha: 1)
+        loginButton.setTitle("登陆", forState: .Normal)
+        view.addSubview(loginButton)
+        loginButton.addTarget(self, action: #selector(ViewController.PresentViewController(_:)), forControlEvents: .TouchUpInside)
     }
     
-    func PresentViewController(button: HyLoglnButton) {
+    func PresentViewController(button: HyLoginButton) {
         // 网络请求
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)), dispatch_get_main_queue()) {
             if self.loginSwitch.on {
-                button.ExitAnimationCompletion({ 
+                button.succeedAnimationWithCompletion({
                     [weak self] in
                     self?.didPresentControllerButtonTouch()
                 })
             } else {
                 button.setTitle("密码错误", forState: .Normal)
-                button.ErrorRevertAnimationCompletion({ 
+                button.failedAnimationWithCompletion({ 
                     
                 })
             }

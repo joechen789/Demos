@@ -8,12 +8,12 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-@interface SpinerLayer : CAShapeLayer
+@interface HySpinerLayer : CAShapeLayer
 
--(instancetype) initWithFrame:(CGRect)frame;
+- (instancetype)initWithFrame:(CGRect)frame;
 
--(void)animation;
+- (void)beginAnimation;
 
--(void)stopAnimation;
+- (void)stopAnimation;
 
 @end

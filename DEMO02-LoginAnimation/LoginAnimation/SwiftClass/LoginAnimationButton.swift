@@ -10,7 +10,14 @@ import UIKit
 
 class LoginAnimationButton: UIButton {
 
-
+//    -(void)setCompletion:(Completion)completion;
+//    
+//    -(void)StartAnimation;
+//    
+//    -(void)ErrorRevertAnimationCompletion:(Completion)completion;
+//    
+//    -(void)ExitAnimationCompletion:(Completion)completion;
+    
 }
 
 class SpinerLayer: CAShapeLayer {
