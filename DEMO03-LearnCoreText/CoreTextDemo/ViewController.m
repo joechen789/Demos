@@ -50,7 +50,7 @@
     
     CoreTextData *data = [CTFrameParser parseAttributedContent:attributedString
                                                      config:config];
-    
+   
     self.ctView.data = data;
     self.ctView.frame = CGRectMake(self.ctView.frame.origin.x, self.ctView.frame.origin.y, self.ctView.frame.size.width, data.height);
     self.ctView.backgroundColor = [UIColor yellowColor];

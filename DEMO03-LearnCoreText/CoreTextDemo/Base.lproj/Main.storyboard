@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="UrE-Zf-Bea" customClass="CTDisplayView">
-                                <rect key="frame" x="20" y="28" width="280" height="100"/>
+                                <rect key="frame" x="20" y="28" width="280" height="499"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.32156862749999998" green="0.84313725490000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
