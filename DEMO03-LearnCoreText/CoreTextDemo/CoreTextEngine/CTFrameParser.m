@@ -8,6 +8,8 @@
 
 #import "CTFrameParser.h"
 #import "CoreTextData.h"
+#import "CoreTextImageData.h"
+#import "CoreTextLinkData.h"
 
 @implementation CTFrameParser
 
@@ -34,7 +36,7 @@
     CFRelease(framersetter);
     return data;
 }
- 
+
 + (NSDictionary *)attributesWithConfig:(CTFrameParserConfig *)config {
     CGFloat fontSize = config.fontSize;
     CTFontRef fontRef = CTFontCreateWithName((CFStringRef)@"Helvetica", fontSize, NULL);
@@ -42,12 +44,11 @@
     CGFloat lineSpacing = config.lineSpace;
     const CFIndex kNumberOfSettings = 3;
     CTParagraphStyleSetting theSettings[kNumberOfSettings] = {
-        {kCTParagraphStyleSpecifierLineSpacingAdjustment, sizeof(CGFloat), &lineSpacing },
-        {kCTParagraphStyleSpecifierMaximumLineSpacing, sizeof(CGFloat), &lineSpacing },
-        {kCTParagraphStyleSpecifierMinimumLineSpacing, sizeof(CGFloat), &lineSpacing },
+        { kCTParagraphStyleSpecifierLineSpacingAdjustment, sizeof(CGFloat), &lineSpacing },
+        { kCTParagraphStyleSpecifierMaximumLineSpacing, sizeof(CGFloat), &lineSpacing },
+        { kCTParagraphStyleSpecifierMinimumLineSpacing, sizeof(CGFloat), &lineSpacing },
     };
     CTParagraphStyleRef theParagraphRef = CTParagraphStyleCreate(theSettings, kNumberOfSettings);
-    
     UIColor *textColor = config.textColor;
     
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
@@ -60,14 +61,23 @@
     return dict;
 }
 
-// 方法一
-+ (CoreTextData *)parseTemplateFile:(NSString *)path config:(CTFrameParserConfig*)config {
-    NSAttributedString *content = [self loadTemplateFile:path config:config];
-    return [self parseAttributedContent:content config:config];
+#pragma mark - 模板解析
+// 方法一 本地模板
++ (CoreTextData *)parseTemplateFile:(NSString *)path config:(CTFrameParserConfig *)config {
+    NSMutableArray *imageArray = [NSMutableArray array];
+    NSMutableArray *linkArray = [NSMutableArray array];
+    NSAttributedString *content = [self loadTemplateFile:path config:config imageArray:imageArray linkArray:linkArray];
+    CoreTextData *data = [self parseAttributedContent:content config:config];
+    data.imageArray = imageArray;
+    data.linkArray = linkArray;
+    return data;
 }
 
-// 方法二
-+ (NSAttributedString *)loadTemplateFile:(NSString *)path config:(CTFrameParserConfig*)config {
+// 方法二 本地模板
++ (NSAttributedString *)loadTemplateFile:(NSString *)path
+                                  config:(CTFrameParserConfig *)config
+                              imageArray:(NSMutableArray *)imageArray
+                               linkArray:(NSMutableArray *)linkArray {
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSMutableAttributedString *result = [[NSMutableAttributedString alloc] init];
     if (data) {
@@ -82,6 +92,29 @@
                     [self parseAttributedContentFromNSDictionary:dict
                                                           config:config];
                     [result appendAttributedString:as];
+                } else if ([type isEqualToString:@"img"]) {
+                    // 创建 CoreTextImageData
+                    CoreTextImageData *imageData = [[CoreTextImageData alloc] init];
+                    imageData.name = dict[@"name"];
+                    imageData.position = [result length];
+                    [imageArray addObject:imageData];
+                    // 创建空白占位符，并且设置它的 CTRunDelegate 信息
+                    NSAttributedString *as = [self parseImageDataFromNSDictionary:dict config:config];
+                    [result appendAttributedString:as];
+                } else if ([type isEqualToString:@"link"]) {
+                    NSUInteger startPos = result.length;
+                    NSAttributedString *as =
+                    [self parseAttributedContentFromNSDictionary:dict
+                                                          config:config];
+                    [result appendAttributedString:as];
+                    // 创建 CoreTextLinkData
+                    NSUInteger length = result.length - startPos;
+                    NSRange linkRange = NSMakeRange(startPos, length);
+                    CoreTextLinkData *linkData = [[CoreTextLinkData alloc] init];
+                    linkData.title = dict[@"content"];
+                    linkData.url = dict[@"url"];
+                    linkData.range = linkRange;
+                    [linkArray addObject:linkData];
                 }
             }
         }
@@ -89,9 +122,9 @@
     return result;
 }
 
-// 方法三
+// 方法三 NSDictionary -> NSAttributedString
 + (NSAttributedString *)parseAttributedContentFromNSDictionary:(NSDictionary *)dict
-                                                        config:(CTFrameParserConfig*)config {
+                                                        config:(CTFrameParserConfig *)config {
     NSMutableDictionary *attributes = [[self attributesWithConfig:config] mutableCopy];
     // set color
     UIColor *color = [self colorFromTemplate:dict[@"color"]];
@@ -109,21 +142,8 @@
     return [[NSAttributedString alloc] initWithString:content attributes:attributes];
 }
 
-// 方法四
-+ (UIColor *)colorFromTemplate:(NSString *)name {
-    if ([name isEqualToString:@"blue"]) {
-        return [UIColor blueColor];
-    } else if ([name isEqualToString:@"red"]) {
-        return [UIColor redColor];
-    } else if ([name isEqualToString:@"black"]) {
-        return [UIColor blackColor];
-    } else {
-        return nil;
-    }
-}
-
-// 方法五
-+ (CoreTextData *)parseAttributedContent:(NSAttributedString *)content config:(CTFrameParserConfig*)config {
+// 方法四 NSAttributedString -> CoreTextData
++ (CoreTextData *)parseAttributedContent:(NSAttributedString *)content config:(CTFrameParserConfig *)config {
     // 创建 CTFramesetterRef 实例
     CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)content);
     
@@ -146,7 +166,56 @@
     return data;
 }
 
-// 方法六
+
+static CGFloat ascentCallback(void *ref){
+    return [(NSNumber*)[(__bridge NSDictionary*)ref objectForKey:@"height"] floatValue];
+}
+
+static CGFloat descentCallback(void *ref){
+    return 0;
+}
+
+static CGFloat widthCallback(void* ref){
+    return [(NSNumber*)[(__bridge NSDictionary*)ref objectForKey:@"width"] floatValue];
+}
+
++ (NSAttributedString *)parseImageDataFromNSDictionary:(NSDictionary *)dict
+                                                config:(CTFrameParserConfig*)config {
+    CTRunDelegateCallbacks callbacks;
+    memset(&callbacks, 0, sizeof(CTRunDelegateCallbacks));
+    callbacks.version = kCTRunDelegateVersion1;
+    callbacks.getAscent = ascentCallback;
+    callbacks.getDescent = descentCallback;
+    callbacks.getWidth = widthCallback;
+    CTRunDelegateRef delegate = CTRunDelegateCreate(&callbacks, (__bridge void *)(dict));
+    
+    // 使用 0xFFFC 作为空白的占位符
+    unichar objectReplacementChar = 0xFFFC;
+    NSString * content = [NSString stringWithCharacters:&objectReplacementChar length:1];
+    NSDictionary * attributes = [self attributesWithConfig:config];
+    NSMutableAttributedString * space =
+    [[NSMutableAttributedString alloc] initWithString:content
+                                           attributes:attributes];
+    CFAttributedStringSetAttribute((CFMutableAttributedStringRef)space,
+                                   CFRangeMake(0, 1), kCTRunDelegateAttributeName, delegate);
+    CFRelease(delegate);
+    return space;
+}
+
+#pragma mark - private method
+
++ (UIColor *)colorFromTemplate:(NSString *)name {
+    if ([name isEqualToString:@"blue"]) {
+        return [UIColor blueColor];
+    } else if ([name isEqualToString:@"red"]) {
+        return [UIColor redColor];
+    } else if ([name isEqualToString:@"black"]) {
+        return [UIColor blackColor];
+    } else {
+        return nil;
+    }
+}
+
 + (CTFrameRef)createFrameWithFramesetter:(CTFramesetterRef)framesetter
                                   config:(CTFrameParserConfig *)config
                                   height:(CGFloat)height {
