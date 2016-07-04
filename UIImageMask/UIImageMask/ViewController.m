@@ -17,28 +17,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor orangeColor];
-    UIImage *image = [UIImage imageNamed:@"height"];
-    UIImage *mask = [UIImage imageNamed:@"FIMbubble"];
     
-    NSLog(@"image Rect: --- %@", NSStringFromCGSize(image.size));
-    NSLog(@"mask Rect: --- %@", NSStringFromCGSize(mask.size));
-    // result of the masking method
-//    UIImage *maskedImage = [self maskImage:image withMask:mask];
-    UIImage *maskedImage = [self maskedImage:image mask:mask];
-    NSLog(@"maskedIamge Rect: --- %@", NSStringFromCGSize(maskedImage.size));
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:maskedImage];
-    imageView.frame = CGRectMake(100, 100, imageView.frame.size.width, imageView.frame.size.height);
-    [self.view addSubview:imageView];
+    [self maskedImage];
+}
+
+- (void)maskedImage {
+    UIImage *heightImage = [UIImage imageNamed:@"height"];
+    UIImage *maskImage = [UIImage imageNamed:@"FIMbubble"];
+    
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:heightImage];
+    
+    backgroundImageView.frame = CGRectMake(10, 40, 50, 150);
+    
+    UIEdgeInsets BubbleRightCapInsets = UIEdgeInsetsMake(maskImage.size.height * 0.5, maskImage.size.width * 0.5, maskImage.size.height * 0.5, maskImage.size.width * 0.5);
+    NSLog(@"BubbleRightCapInsets Rect: --- %@", NSStringFromUIEdgeInsets(BubbleRightCapInsets));
+    UIImage *rightBubbleBackground = [maskImage
+                                      resizableImageWithCapInsets:UIEdgeInsetsZero
+                                      resizingMode:UIImageResizingModeStretch];
+    
+    CALayer *mask = [CALayer layer];
+    mask.contents = (id)[rightBubbleBackground CGImage];
+    mask.frame = backgroundImageView.layer.bounds;
+    mask.contentsScale = rightBubbleBackground.scale;
+    mask.contentsCenter =
+    CGRectMake(BubbleRightCapInsets.left/rightBubbleBackground.size.width,
+               BubbleRightCapInsets.top/rightBubbleBackground.size.height,
+               1.0/rightBubbleBackground.size.width,
+               1.0/rightBubbleBackground.size.height);
+    NSLog(@"contentsCenter Rect: --- %@", NSStringFromCGRect(mask.contentsCenter));
+    backgroundImageView.layer.mask = mask;
+    backgroundImageView.layer.masksToBounds = YES;
+    
+    [self.view addSubview:backgroundImageView];
 }
 
 - (UIImage *)maskedImage:(UIImage *)image mask:(UIImage *)maskImage {
-    
-    if (image.size.height >= image.size.width && image.size.height / image.size.width > 3) {
-        
-    } else if (image.size.height >= image.size.width && image.size.height / image.size.width < 3 && image.size.height / image.size.width > 1) {
-        
-    }
-    
     CGImageRef maskImageRef = maskImage.CGImage;
     
     CGImageRef mask = CGImageMaskCreate(CGImageGetWidth(maskImageRef),
@@ -74,12 +87,6 @@
     
     NSLog(@"CGImageGetWidth(maskedIamge) Rect: --- %zu", CGImageGetWidth(maskedImage));
     NSLog(@"CGImageGetHeight(maskedIamge) Rect: --- %zu", CGImageGetHeight(maskedImage));
-//    CGFloat maskedImageHeight = CGImageGetHeight(maskedImage);
-//    CGFloat maskedImageWidth = CGImageGetWidth(maskedImage);
-//    if (maskedImageHeight > maskedImageWidth) {
-//        CGFloat scale = maskedImageHeight / 150;
-//        cgimage
-//    }
     UIImage *returnImage = [UIImage imageWithCGImage:maskedImage];
     
     CGImageRelease(maskedImage);
