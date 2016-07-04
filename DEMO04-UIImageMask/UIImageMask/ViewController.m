@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor orangeColor];
     
     UIImage *heightImage = [UIImage imageNamed:@"height"];
     UIImageView *heightImageView = [[UIImageView alloc] initWithImage:heightImage];
@@ -61,7 +60,6 @@
     }
     
     UIEdgeInsets BubbleRightCapInsets = UIEdgeInsetsMake(maskImage.size.height * 0.5, maskImage.size.width * 0.5, maskImage.size.height * 0.5, maskImage.size.width * 0.5);
-    NSLog(@"BubbleRightCapInsets Rect: --- %@", NSStringFromUIEdgeInsets(BubbleRightCapInsets));
     UIImage *rightBubbleBackground = [maskImage
                                       resizableImageWithCapInsets:UIEdgeInsetsZero
                                       resizingMode:UIImageResizingModeStretch];
@@ -75,7 +73,6 @@
                BubbleRightCapInsets.top/rightBubbleBackground.size.height,
                1.0/rightBubbleBackground.size.width,
                1.0/rightBubbleBackground.size.height);
-    NSLog(@"contentsCenter Rect: --- %@", NSStringFromCGRect(mask.contentsCenter));
     backgroundImageView.layer.mask = mask;
     backgroundImageView.layer.masksToBounds = YES;
 }
