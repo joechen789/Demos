@@ -15,4 +15,8 @@ class MainViewController: UIViewController {
 
         view.backgroundColor = UIColor.orangeColor()
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }

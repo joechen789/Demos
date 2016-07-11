@@ -116,6 +116,7 @@
     shrinkAnim.removedOnCompletion = false;
     _backgroundColor = self.backgroundColor;
     
+    
     CABasicAnimation *backgroundColor = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
     backgroundColor.toValue  = (__bridge id)[UIColor redColor].CGColor;
     backgroundColor.duration = 0.1f;

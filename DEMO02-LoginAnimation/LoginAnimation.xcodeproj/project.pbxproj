@@ -11,8 +11,6 @@
 		A44BC4481D21F3DF005C40CA /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44BC4451D21F3DF005C40CA /* SkyFloatingLabelTextFieldWithIcon.swift */; };
 		A44BC4491D21F3DF005C40CA /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44BC4461D21F3DF005C40CA /* UITextField+fixCaretPosition.swift */; };
 		A4AB852E1D2209A900C91899 /* LoginAnimationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AB852D1D2209A900C91899 /* LoginAnimationButton.swift */; };
-		A4AB85351D22506F00C91899 /* HyLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB85321D22506F00C91899 /* HyLoginButton.m */; };
-		A4AB85361D22506F00C91899 /* HySpinerLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AB85341D22506F00C91899 /* HySpinerLayer.m */; };
 		A4C6807E1D212B38008A3FA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6807D1D212B38008A3FA4 /* AppDelegate.swift */; };
 		A4C680801D212B38008A3FA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6807F1D212B38008A3FA4 /* ViewController.swift */; };
 		A4C680831D212B38008A3FA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C680811D212B38008A3FA4 /* Main.storyboard */; };
@@ -29,10 +27,6 @@
 		A44BC4451D21F3DF005C40CA /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
 		A44BC4461D21F3DF005C40CA /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		A4AB852D1D2209A900C91899 /* LoginAnimationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAnimationButton.swift; sourceTree = "<group>"; };
-		A4AB85311D22506F00C91899 /* HyLoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyLoginButton.h; sourceTree = "<group>"; };
-		A4AB85321D22506F00C91899 /* HyLoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyLoginButton.m; sourceTree = "<group>"; };
-		A4AB85331D22506F00C91899 /* HySpinerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HySpinerLayer.h; sourceTree = "<group>"; };
-		A4AB85341D22506F00C91899 /* HySpinerLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HySpinerLayer.m; sourceTree = "<group>"; };
 		A4C6807A1D212B38008A3FA4 /* LoginAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C6807D1D212B38008A3FA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4C6807F1D212B38008A3FA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,10 +99,6 @@
 		A4C680A21D214695008A3FA4 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				A4AB85311D22506F00C91899 /* HyLoginButton.h */,
-				A4AB85321D22506F00C91899 /* HyLoginButton.m */,
-				A4AB85331D22506F00C91899 /* HySpinerLayer.h */,
-				A4AB85341D22506F00C91899 /* HySpinerLayer.m */,
 				A4C680B11D21586E008A3FA4 /* ParkedTextField.swift */,
 			);
 			path = Class;
@@ -198,14 +188,12 @@
 			files = (
 				A44BC4491D21F3DF005C40CA /* UITextField+fixCaretPosition.swift in Sources */,
 				A4C680B81D215B1A008A3FA4 /* LoginTransition.swift in Sources */,
-				A4AB85361D22506F00C91899 /* HySpinerLayer.m in Sources */,
 				A44BC4481D21F3DF005C40CA /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				A4C680B21D21586E008A3FA4 /* ParkedTextField.swift in Sources */,
 				A4AB852E1D2209A900C91899 /* LoginAnimationButton.swift in Sources */,
 				A4C680B01D2148BE008A3FA4 /* MainViewController.swift in Sources */,
 				A4C680801D212B38008A3FA4 /* ViewController.swift in Sources */,
 				A4C6807E1D212B38008A3FA4 /* AppDelegate.swift in Sources */,
-				A4AB85351D22506F00C91899 /* HyLoginButton.m in Sources */,
 				A44BC4471D21F3DF005C40CA /* SkyFloatingLabelTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
