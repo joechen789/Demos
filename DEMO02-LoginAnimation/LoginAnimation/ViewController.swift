@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var usernameTextField: SkyFloatingLabelTextField!
     @IBOutlet var passwordTextField: SkyFloatingLabelTextField!
+    @IBOutlet var authCodeTextField: SkyFloatingLabelTextField!
     
     @IBOutlet var loginSwitch: UISwitch!
     
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
         
         applySkyscannerTheme(usernameTextField)
         applySkyscannerTheme(passwordTextField)
+        applySkyscannerTheme(authCodeTextField)
     }
 
     func applySkyscannerTheme(textField: SkyFloatingLabelTextField) {
@@ -48,7 +50,7 @@ class ViewController: UIViewController {
     
     func createPresentControllerButton() {
         let loginButton = LoginAnimationButton(frame: CGRect(x: 20, y: CGRectGetHeight(view.bounds) - 120, width: UIScreen.mainScreen().bounds.size.width - 40, height: 40))
-        loginButton.backgroundColor = UIColor(red: 1, green: 0, blue: 128 / 255, alpha: 1)
+        loginButton.backgroundColor = UIColor(red: 4/255.0, green: 186/255.0, blue: 215/255.0, alpha: 1)
         loginButton.setTitle("登陆", forState: .Normal)
         view.addSubview(loginButton)
         loginButton.addTarget(self, action: #selector(ViewController.PresentViewController(_:)), forControlEvents: .TouchUpInside)
@@ -62,7 +64,7 @@ class ViewController: UIViewController {
                     [weak self] in
                     self?.didPresentControllerButtonTouch()
                 }
-                
+            
             } else {
                 button.setTitle("密码错误", forState: .Normal)
                 button.failedAnimation {

@@ -17,9 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1eh-Rp-Tzo">
-                                <rect key="frame" x="69" y="312" width="51" height="31"/>
-                            </switch>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ha6-P0-24o">
                                 <rect key="frame" x="150" y="40" width="300" height="150"/>
                                 <subviews>
@@ -32,7 +29,7 @@
                                             <constraint firstAttribute="width" constant="200" id="lOx-lR-acq"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="用户名"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value=" 用户名"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="用户名"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
                                                 <color key="value" red="0.28627450980000002" green="0.69019607839999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -53,8 +50,38 @@
                                             </mask>
                                         </variation>
                                     </view>
+                                    <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0iI-5d-79I" customClass="SkyFloatingLabelTextField" customModule="LoginAnimation" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="110" width="200" height="40"/>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="Ucn-Np-Hw5"/>
+                                            <constraint firstAttribute="width" constant="200" id="qdD-yR-c5S"/>
+                                            <constraint firstAttribute="height" constant="40" id="xit-jt-mKw"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="验证码"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value=" 验证码"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                <color key="value" red="0.28627450980000002" green="0.69019607839999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                <color key="value" red="0.28627450980000002" green="0.69019607839999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Ucn-Np-Hw5"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
                                     <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xob-BA-2Bd" customClass="SkyFloatingLabelTextField" customModule="LoginAnimation" customModuleProvider="target">
-                                        <rect key="frame" x="50" y="70" width="200" height="40"/>
+                                        <rect key="frame" x="50" y="60" width="200" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="LG0-az-osA"/>
@@ -63,7 +90,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="密码"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="密码"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value=" 密码"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
                                                 <color key="value" red="0.28627450980000002" green="0.69019607839999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
@@ -86,22 +113,34 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="0iI-5d-79I" firstAttribute="top" secondItem="xob-BA-2Bd" secondAttribute="bottom" constant="10" id="14T-cY-953"/>
                                     <constraint firstItem="xob-BA-2Bd" firstAttribute="centerX" secondItem="Ha6-P0-24o" secondAttribute="centerX" id="2db-Qn-MqW"/>
                                     <constraint firstAttribute="height" constant="150" id="3tB-kN-hfc"/>
-                                    <constraint firstItem="xob-BA-2Bd" firstAttribute="top" secondItem="KQf-WD-cM6" secondAttribute="bottom" constant="20" id="XaS-gD-Yjk"/>
+                                    <constraint firstItem="0iI-5d-79I" firstAttribute="leading" secondItem="xob-BA-2Bd" secondAttribute="leading" id="Q7L-M9-PML"/>
+                                    <constraint firstItem="xob-BA-2Bd" firstAttribute="top" secondItem="KQf-WD-cM6" secondAttribute="bottom" constant="10" id="XaS-gD-Yjk"/>
                                     <constraint firstAttribute="width" constant="300" id="bsw-n0-KIF"/>
                                     <constraint firstItem="KQf-WD-cM6" firstAttribute="centerX" secondItem="Ha6-P0-24o" secondAttribute="centerX" id="dID-PD-ecc"/>
                                     <constraint firstItem="KQf-WD-cM6" firstAttribute="top" secondItem="Ha6-P0-24o" secondAttribute="top" constant="10" id="qSi-Ap-L2S"/>
                                 </constraints>
                             </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1eh-Rp-Tzo">
+                                <rect key="frame" x="0.0" y="569" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="9hP-u6-x3f"/>
+                                    <constraint firstAttribute="width" constant="49" id="bPe-0V-Nz2"/>
+                                </constraints>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ha6-P0-24o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="08W-nR-od8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1eh-Rp-Tzo" secondAttribute="bottom" id="7sh-sD-QjO"/>
+                            <constraint firstItem="1eh-Rp-Tzo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AO1-2t-pbG"/>
                             <constraint firstItem="Ha6-P0-24o" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="YDh-jx-Qii"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="authCodeTextField" destination="0iI-5d-79I" id="mlT-4b-xvW"/>
                         <outlet property="loginSwitch" destination="1eh-Rp-Tzo" id="h6h-Ak-yMM"/>
                         <outlet property="passwordTextField" destination="xob-BA-2Bd" id="m0O-Bw-GFe"/>
                         <outlet property="usernameTextField" destination="KQf-WD-cM6" id="KyO-XA-RDq"/>

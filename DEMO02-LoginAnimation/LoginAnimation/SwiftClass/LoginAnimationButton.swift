@@ -19,7 +19,7 @@ class LoginAnimationButton: UIButton {
     private var  shrinkCurve = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     private var  expandCurve = CAMediaTimingFunction(controlPoints: 0.95, 0.02, 1, 0.05)
     private var spinerLayer: SpinerLayer!
-    private var defaultBackgroundColor = UIColor.blueColor()
+    private var defaultBackgroundColor = UIColor(red: 4/255.0, green: 186/255.0, blue: 215/255.0, alpha: 1)
     private var animationCompletion: AnimationCompletion?
     
     override init(frame: CGRect) {
@@ -150,9 +150,9 @@ private extension LoginAnimationButton {
     }
     
     func beginAniamtion() {
-        if CGColorEqualToColor(layer.backgroundColor, failedBackgroundColor.CGColor)  {
+//        if CGColorEqualToColor(layer.backgroundColor, failedBackgroundColor.CGColor)  {
             revertBackgroundColor()
-        }
+//        }
         
         layer.addSublayer(spinerLayer)
         let shrinkAnimation = CABasicAnimation(keyPath: "bounds.size.width")
