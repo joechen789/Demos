@@ -13,26 +13,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.redColor()
-        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 40, height: 40))
-        button.backgroundColor = UIColor.blueColor()
-        button.addTarget(self, action: #selector(foo1), forControlEvents: .TouchUpInside)
-        view.addSubview(button)
-        let longPressGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(foo))
-        longPressGestureRecognizer.numberOfTouchesRequired = 1
-        longPressGestureRecognizer.numberOfTapsRequired = 3
-        button.addGestureRecognizer(longPressGestureRecognizer)
-    }
-    func foo1()  {
+//        self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 80)
         
-    }
-    func foo() {
+        let baseView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 80))
+        baseView.backgroundColor = UIColor.orange
+        
+//        self.navigationBar.addSubview(baseView)
         
     }
     
-//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SecondViewController")
-//        navigationController?.pushViewController(vc, animated: true)
-//    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
